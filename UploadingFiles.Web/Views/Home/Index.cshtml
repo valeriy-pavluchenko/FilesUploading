@@ -1,0 +1,47 @@
+﻿@model UploadingFiles.Web.Models.UploadedFileViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container body-content">
+    <h2>Add new file</h2>
+
+    <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm">
+                @using (Html.BeginForm("AddFile", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" } @*new { enctype = "multipart/form-data" }*@))
+                {
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Description, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("File", new { @class = "col-md-2 control-label" })
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <span class="btn btn-primary btn-file">
+                                    Browse&hellip; <input type="file" name="file" value="Browse" />
+                                </span>
+                            </span>
+                            <input type="text" class="form-control" readonly />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Add file" class="btn btn-default" />
+                        </div>
+                    </div>
+                }
+            </section>
+        </div>
+    </div>
+
+    @Html.Action("FilesList")
+</div>
