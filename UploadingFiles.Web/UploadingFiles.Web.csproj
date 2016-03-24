@@ -129,6 +129,7 @@
     <Content Include="Views\Home\FilesList.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Attributes\JsonNetModelAttribute.cs" />
     <Compile Include="Binders\JsonNetModelBinder.cs" />
