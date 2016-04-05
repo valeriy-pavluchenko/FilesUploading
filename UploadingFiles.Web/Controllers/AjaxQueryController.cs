@@ -53,18 +53,18 @@ namespace UploadingFiles.Web.Controllers
         }
 
         [HttpPost]
-        public JsonResult AddFile(UploadedFileViewModel fileViewModel, HttpPostedFileBase file)
+        public JsonResult AddFile(UploadedFileEditModel model/*UploadedFileViewModel fileViewModel, HttpPostedFileBase file*/)
         {
             byte[] fileData = null;
-            using (var binaryReader = new BinaryReader(file.InputStream))
+            using (var binaryReader = new BinaryReader(model.File.InputStream))
             {
-                fileData = binaryReader.ReadBytes(file.ContentLength);
+                fileData = binaryReader.ReadBytes(model.File.ContentLength);
             }
 
             var uploadedFile = new UploadedFile
             {
-                Name = file.FileName,
-                Description = fileViewModel.Description,
+                Name = model.File.FileName,
+                Description = model.Description,
                 Data = fileData
             };
 
