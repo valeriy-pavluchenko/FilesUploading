@@ -17,12 +17,3 @@
     cursor: inherit;
     display: block;
 }
-
-.form-group .form-control[readonly] {
-    background-color: white;
-    width: 535px;
-}
-
-.input-group-btn {
-    padding: 0 0 0 15px;
-}
