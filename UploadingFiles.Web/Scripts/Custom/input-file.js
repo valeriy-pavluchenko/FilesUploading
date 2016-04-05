@@ -16,6 +16,11 @@ $(document).ready( function() {
         } else {
             if( log ) alert(log);
         }
+
+        console.log('input ' + input);
         
     });
+
+    console.log('Hello ');
+    
 });

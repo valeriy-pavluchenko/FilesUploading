@@ -43,5 +43,75 @@
         </div>
     </div>
 
-    @Html.Action("FilesList")
+    <div class="row" style="margin: 50px 0; ">
+        <!--
+        <div class="col-md-8">
+            <div class="pull-left prf-file" style="margin-right: 20px;">
+                <input type="file" name="img" accept="image/*">
+            </div>
+        </div>
+        -->
+        <a href="#loadFileModal" id="loadFile" class="btn btn-primary" data-toggle="modal" data-target="#loadFileModal">Загрузить файл</a>
+        <a href="" id="#loadLinkModal" class="btn btn-primary pull-right" data-toggle="modal" data-target="#loadLinkModal">Загрузить ссылку</a>
+
+    </div>
+
+        @Html.Action("FilesList")
+    </div>
+
+<!-- Modal for File Load -->
+<div class="modal fade" id="loadFileModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Загрузите файл</h4>
+            </div>
+            <div class="modal-body">
+                <form name="traineeFile">
+                    <div class="form-group">
+                        <label for="fileName" class="control-label">Название:</label>
+                        <input type="text" class="form-control" id="fileName">
+                    </div>
+                    <div class="form-group">
+                        <input type="file" id="newFile" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="saveFile" class="btn btn-primary">Сохранить</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+            </div>
+        </div>
+    </div>
 </div>
+<!-- end of Modal for File Load -->
+
+<!-- Modal for Link Load -->
+<div class="modal fade" id="loadLinkModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Загрузите ссылку</h4>
+            </div>
+            <div class="modal-body">
+                <form name="traineeLink">
+                    <div class="form-group">
+                        <label for="linkName" class="control-label">Название:</label>
+                        <input type="text" class="form-control prf-link-name" id="linkName" data-link="linkName">
+                    </div>
+                    <div class="form-group">
+                        <label for="linkURL" class="control-label">Ссылка:</label>
+                        <input type="url" class="form-control prf-link-url" id="linkURL" >
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="saveLink" class="btn btn-primary">Сохранить</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end of Modal for Link Load -->
