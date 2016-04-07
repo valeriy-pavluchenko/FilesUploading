@@ -3,6 +3,12 @@
     var MAX_FILE_SIZE = 0.5 * 1024 * 1024;
 
     $('#attention').hide();
+
+    var tableCell=$('<td></td>');
+    var tableRow=$('<tr></tr>');
+    var anchor=$('<a href=""></a>');
+    var paragr=$('<p></p>');
+
     /*
         var files;
     
@@ -74,7 +80,29 @@
             contentType: false,
             processData: false,
             success: function (data) {
-                alert("works" + JSON.stringify(data));
+                //alert("works" + JSON.stringify(data));
+                var newRow = tableRow.clone();
+
+                var newCell1 = tableCell.clone();
+                var newAnchor = anchor.clone();
+                var download = '/Home/Download/' + data.id;
+                newAnchor.attr('href', download).text(data.name);
+                newCell1.append(newAnchor);
+
+                var newCell2 = tableCell.clone();
+                var newParagr = paragr.clone();
+                newParagr.text(data.description);
+                newCell2.append(newParagr);
+
+                var newCell3 = tableCell.clone();
+                var newAnchor = anchor.clone();
+                var download = '/Home/RemoveFile/' + data.id;
+                newAnchor.attr('href', download).text('Delete');
+                newCell3.append(newAnchor);
+
+                newRow.append(newCell1).append(newCell2).append(newCell3);
+
+                $('#listTable').append(newRow);
             },
             error: function () {
                 alert("error");
@@ -84,8 +112,9 @@
             },
             complete: function () {
                 $('#loadFileModal').modal('hide');
-                $('#fileName').val('');
+                $('#fileDescription').val('');
                 $('#newFile').val('');
+                $('#newFileName').val('');
             }
         });
 
