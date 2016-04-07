@@ -67,15 +67,15 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="exampleModalLabel">Загрузите файл</h4>
             </div>
-            <div class="modal-body">
-                <form id="superForm" name="traineeFile" enctype = "multipart/form-data">
+            <form id="superForm" name="traineeFile" enctype="multipart/form-data">
+                <div class="modal-body">
                     <div class="form-group">
                         <label for="fileName" class="control-label">Название:</label>
                         <input type="text" id="fileDescription" class="form-control" name="description">
                     </div>
 
                     <div class="form-group">
-                        <label for="file" class="control-label">Название:</label>
+                        <label for="file" class="control-label">Выберите файл:</label>
                         <div class="input-group">
                             <span class="input-group-btn">
                                 <span class="btn btn-primary btn-file">
@@ -85,13 +85,12 @@
                             <input type="text" class="form-control" readonly />
                         </div>
                     </div>
-
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" id="saveFile" class="btn btn-primary">Сохранить</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" id="saveFile" class="btn btn-primary">Сохранить</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -105,22 +104,22 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">Загрузите ссылку</h4>
             </div>
-            <div class="modal-body">
-                <form name="traineeLink">
+            <form name="traineeLink">
+                <div class="modal-body">
                     <div class="form-group">
                         <label for="linkName" class="control-label">Название:</label>
                         <input type="text" class="form-control prf-link-name" id="linkName" data-link="linkName">
                     </div>
                     <div class="form-group">
                         <label for="linkURL" class="control-label">Ссылка:</label>
-                        <input type="url" class="form-control prf-link-url" id="linkURL" >
+                        <input type="url" class="form-control prf-link-url" id="linkURL">
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" id="saveLink" class="btn btn-primary">Сохранить</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" id="saveLink" class="btn btn-primary">Сохранить</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

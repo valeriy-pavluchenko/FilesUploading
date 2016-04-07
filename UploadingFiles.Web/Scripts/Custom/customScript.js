@@ -40,13 +40,18 @@
 
         var fileData = $('#newFile').prop('files')[0];
         var fileDescription = $('#fileDescription').val();
-
+        /*
         var form = $('form[name="traineeFile"]'); // getting FORM from page
         var formData = new FormData(form); // creating instanse of FormData
+        */
+        //var form = $('form[name="traineeFile"]'); // getting FORM from page
+        var formData = new FormData(); // creating instanse of FormData
 
         // filling FormData with data for sending to server
         formData.append("file", fileData); // adding file to form data
         formData.append("description", fileDescription); // adding description of form data
+
+        console.log('formData= ' + JSON.stringify(formData));
 
         $.ajax({
             url: "/AjaxQuery/AddFile",
@@ -104,6 +109,44 @@
     });
 
 
+    $('form[name="traineeLink"]').on('submit', function (e) {
+        e.preventDefault;
+        var $form = $('form[name="traineeLink"]');
+        var currentForm = {};
+        currentForm['linkName'] = $form.find('#linkName').val();
+        currentForm['linkUrl'] = $form.find('#linkURL').val();
+        console.log('currentForm Out= ' + JSON.stringify(currentForm));
+
+        $.ajax({
+            url: 'action',
+            method: 'POST',
+            async: true,
+            contentType: 'application/json',
+            data: JSON.stringify(currentForm),
+            dataType: 'json',
+            success: function (data) {
+
+            },
+            error: function () {
+                alert('Извините на сервере произошла ошибка\n' + JSON.stringify(currentForm));
+                // test
+
+                //////////
+            },
+            beforeSend: function () {
+                //$formButtons.attr("disabled", "disabled");
+                //$submitMessage.text('Сохраняется').addClass('prf-blink');
+            },
+            complete: function () {
+                //$formButtons.removeAttr("disabled");
+                //$submitMessage.text('Сохранить').removeClass('prf-blink');
+                $('#loadLinkModal').modal('hide');
+                $('#linkName').val('');
+                $('#linkURL').val('');
+            }
+        });
+    });
+    /*
     $('body').on('click', '#saveLink', function () {
         var $form = $('form[name="traineeLink"]');
         var currentForm = {};
@@ -141,6 +184,6 @@
         });
     });
 
-
+    */
 
 });
