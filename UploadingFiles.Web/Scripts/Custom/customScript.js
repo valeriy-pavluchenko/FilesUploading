@@ -179,6 +179,25 @@
 
         return false;
     });
+
+    $('#listTable').find('a[href^="/Home/Download"]').each(function () {
+        //Create image
+        var newImg = image.clone();
+        //Work with Image extension
+        var nameFile = $(this).text();
+        var nameArr = nameFile.split('.');
+        var extension = nameArr[nameArr.length - 1].substring(0, 3);
+
+        if (extension == 'jep') { extension = 'jpg' };
+        if (extension == '7z') { extension = 'zip' };
+
+        if (RV_TYPE.test(extension) == false) {
+            extension = 'other';
+        }
+        var downloadImg = '/images/file-' + extension + '.png';
+        newImg.attr('src', downloadImg);
+        $(this).prepend(newImg);
+    });
     
 
 });
