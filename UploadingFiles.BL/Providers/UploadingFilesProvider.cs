@@ -17,7 +17,7 @@ namespace UploadingFiles.BL.Providers
 
         public List<UploadedFile> GetAllFiles()
         {
-            return _context.Files.ToList();
+            return _context.Files.OrderByDescending(p => p.Id).ToList();
         }
 
         public UploadedFile GetFile(int id)
