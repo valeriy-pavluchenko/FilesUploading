@@ -83,6 +83,7 @@
                 var nameArr = nameFile.split('.');
                 var extension = nameArr[nameArr.length - 1].substring(0, 3);
 
+                if (extension == 'htm') { extension = 'html' };
                 if (extension == 'jep') { extension = 'jpg' };
                 if (extension == '7z') { extension = 'zip' };
 
@@ -188,6 +189,7 @@
         var nameArr = nameFile.split('.');
         var extension = nameArr[nameArr.length - 1].substring(0, 3);
 
+        if (extension == 'htm') { extension = 'html' };
         if (extension == 'jep') { extension = 'jpg' };
         if (extension == '7z') { extension = 'zip' };
 
