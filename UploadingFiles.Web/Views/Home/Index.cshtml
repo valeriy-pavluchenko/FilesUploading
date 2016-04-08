@@ -6,12 +6,12 @@
 }
 
 <div class="container body-content">
-    <h2>Add new file</h2>
+    @*<h2>Add new file</h2>
 
     <div class="row">
         <div class="col-md-8">
             <section id="loginForm">
-                @using (Html.BeginForm("AddFile", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" } @*new { enctype = "multipart/form-data" }*@))
+                @using (Html.BeginForm("AddFile", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
                 {
 
                     <div class="form-group">
@@ -41,7 +41,7 @@
                 }
             </section>
         </div>
-    </div>
+    </div>*@
 
     <div class="row" style="margin: 50px 0; ">
         <!--
