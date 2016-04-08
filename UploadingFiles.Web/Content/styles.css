@@ -17,3 +17,14 @@
     cursor: inherit;
     display: block;
 }
+
+.table.listTable > tbody > tr > td {
+  vertical-align: middle;
+}
+
+.listTable a > img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+

@@ -20,7 +20,5 @@ $(document).ready( function() {
         console.log('input ' + input);
         
     });
-
-    console.log('Hello ');
     
 });
